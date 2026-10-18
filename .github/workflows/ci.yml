@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  skill:
+    runs-on: self-hosted
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Validate the skill with the official validator
+        run: |
+          pip install "git+https://github.com/agentskills/agentskills#subdirectory=skills-ref"
+          skills-ref validate skills/solvecha
+      - name: Check the Node.js script
+        run: node --check skills/solvecha/scripts/solve_recaptcha.mjs
+      - name: Check the Python script
+        run: python -m py_compile skills/solvecha/scripts/solve_recaptcha.py
+      - name: No keys in the repository
+        run: "! grep -rEn 'slv_[A-Za-z0-9]{32}' . --exclude-dir=.git --exclude-dir=tests"
+
+  python:
+    runs-on: self-hosted
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Tests with the real frameworks
+        working-directory: python
+        run: |
+          pip install -e ".[test]" langchain-core llama-index-core openai-agents browser-use crewai
+          pytest -q
+      - name: Build the package
+        working-directory: python
+        run: |
+          pip install build
+          python -m build
