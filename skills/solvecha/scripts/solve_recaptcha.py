@@ -29,6 +29,7 @@ def call(method, path, key, body=None):
     data = json.dumps(body).encode() if body is not None else None
     request = urllib.request.Request(API + path, data=data, method=method)
     request.add_header("Authorization", "Bearer " + key)
+    request.add_header("User-Agent", "solvecha-skill/1.0")  # the default Python-urllib agent is blocked by Cloudflare
     if data is not None:
         request.add_header("Content-Type", "application/json")
     try:
