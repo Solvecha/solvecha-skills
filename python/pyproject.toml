@@ -21,6 +21,8 @@ test = ["pytest", "pytest-asyncio"]
 
 [project.urls]
 Homepage = "https://solvecha.com/docs/ai-agents"
+Repository = "https://github.com/Solvecha/solvecha-skills"
+Documentation = "https://solvecha.com/docs"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/solvecha"]
