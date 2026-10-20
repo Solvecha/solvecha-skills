@@ -39,6 +39,10 @@ jobs:
           python-version: "3.12"
       - name: Tests with the real frameworks
         working-directory: python
+        # CrewAI writes to the user data dir; the runner home is read-only.
+        env:
+          XDG_DATA_HOME: ${{ runner.temp }}/xdg-data
+          CREWAI_STORAGE_DIR: ${{ runner.temp }}/crewai
         run: |
           pip install -e ".[test]" langchain-core llama-index-core openai-agents browser-use crewai
           pytest -q
