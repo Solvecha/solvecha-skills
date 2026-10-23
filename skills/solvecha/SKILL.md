@@ -1,6 +1,6 @@
 ---
 name: solvecha
-description: Solve CAPTCHAs with the Solvecha API (reCAPTCHA v2 image grids, text captchas, GeeTest sliders, FunCAPTCHA). Use when a browser task is blocked by a captcha, an image challenge appears, or the user asks to solve or bypass a captcha on a site they may automate.
+description: "Captcha solving API: reCAPTCHA v2 image grids, text captchas, GeeTest slider and FunCAPTCHA. Free tier of 100 solves per day. Use when a browser task is blocked by a captcha."
 license: MIT
 compatibility: Needs a Solvecha API key in SOLVECHA_API_KEY and network access to api.solvecha.com. Works in Claude Code, Claude Desktop, OpenClaw and Hermes Agent.
 metadata:
