@@ -21,9 +21,16 @@ cp -r skills/solvecha ~/.claude/skills/solvecha
 cp -r skills/solvecha ~/.openclaw/skills/solvecha
 # or from Git: openclaw skills install git:<owner>/<repo>
 
-# Hermes Agent (the folder under skills/ is the install name)
-cp -r skills/solvecha ~/.hermes/skills/solvecha
-# or, once this repo is public: hermes skills tap add <owner>/<repo> && hermes skills install solvecha
+# Hermes Agent
+hermes skills tap add Solvecha/solvecha-skills
+hermes skills install solvecha
+# or by hand (the folder under skills/ is the install name): cp -r skills/solvecha ~/.hermes/skills/solvecha
+```
+
+One command for the agents on your machine (Claude Code, Cursor, Codex and others), through [skills.sh](https://skills.sh):
+
+```bash
+npx skills add Solvecha/solvecha-skills
 ```
 
 Claude Desktop and claude.ai: zip the `solvecha` folder (the folder itself at the top of the zip) and upload it under Customize, Skills.
@@ -36,6 +43,6 @@ See [python/README.md](python/README.md).
 
 ## Not published yet
 
-Nothing here is on PyPI, npm, ClawHub or a skills catalog. See the publishing checklist in the Solvecha task report.
+Nothing here is on PyPI, npm or ClawHub yet. The skill installs from this repository with `npx skills add` and the Hermes tap. See the publishing checklist in the Solvecha task report.
 
 MIT licensed. Solvecha is not affiliated with CloakHQ, NopeCHA, 2Captcha or CapSolver.
