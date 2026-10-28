@@ -39,10 +39,15 @@ Validate with the official checker: `pip install "git+https://github.com/agentsk
 
 ## Python package
 
-See [python/README.md](python/README.md).
+```bash
+pip install solvecha
+pip install "solvecha[langchain]"   # or openai, crewai, llamaindex, browser-use
+```
 
-## Not published yet
+On PyPI: https://pypi.org/project/solvecha/. See [python/README.md](python/README.md) for the client and the framework tools.
 
-Nothing here is on PyPI, npm or ClawHub yet. The skill installs from this repository with `npx skills add` and the Hermes tap. See the publishing checklist in the Solvecha task report.
+## Releases
+
+A published GitHub release uploads the Python package to PyPI (`.github/workflows/publish.yml`, Trusted Publishing, no stored token). The skill is not on npm or ClawHub; it installs from this repository with `npx skills add` and the Hermes tap.
 
 MIT licensed. Solvecha is not affiliated with CloakHQ, NopeCHA, 2Captcha or CapSolver.
