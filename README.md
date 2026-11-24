@@ -1,15 +1,15 @@
 # Solvecha for AI agents
 
-Skills and framework tools for [Solvecha](https://solvecha.com), a captcha solving API (reCAPTCHA image grids, text captchas, GeeTest sliders, FunCAPTCHA).
+Skills and framework tools for [Solvecha](https://solvecha.com/?utm_source=github&utm_medium=readme&utm_campaign=solvecha-skills), a captcha solving API (reCAPTCHA image grids, text captchas, GeeTest sliders, FunCAPTCHA).
 
 | Path | What |
 |---|---|
 | `skills/solvecha/` | Agent skill (`SKILL.md`, scripts in Python and Node.js, references). Works in Claude Code, Claude Desktop, OpenClaw and Hermes Agent. |
 | `python/` | `solvecha` Python package: API client and tools for OpenAI, LangChain, CrewAI, LlamaIndex and Browser Use. |
 
-The fastest way for most agents is the remote MCP server: `https://api.solvecha.com/mcp` (header `Authorization: Bearer <key>`). See https://solvecha.com/docs/ai-agents.
+The fastest way for most agents is the remote MCP server: `https://api.solvecha.com/mcp` (header `Authorization: Bearer <key>`). See https://solvecha.com/docs/ai-agents?utm_source=github&utm_medium=readme&utm_campaign=solvecha-skills.
 
-You need an API key from https://solvecha.com/dashboard. The free tier has 100 successful solves a day. **Never commit a key.** The skill and the package read `SOLVECHA_API_KEY`.
+You need an API key from https://solvecha.com/dashboard?utm_source=github&utm_medium=readme&utm_campaign=solvecha-skills. The free tier has 100 successful solves a day. **Never commit a key.** The skill and the package read `SOLVECHA_API_KEY`.
 
 ## Install the skill
 

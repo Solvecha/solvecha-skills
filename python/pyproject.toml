@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "solvecha"
-version = "0.1.0"
+version = "0.1.1"
 description = "Python client and AI agent tools for the Solvecha captcha solving API"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -20,9 +20,9 @@ browser-use = ["browser-use"]
 test = ["pytest", "pytest-asyncio"]
 
 [project.urls]
-Homepage = "https://solvecha.com/docs/ai-agents"
+Homepage = "https://solvecha.com/docs/ai-agents?utm_source=pypi&utm_medium=project-links&utm_campaign=solvecha-python"
 Repository = "https://github.com/Solvecha/solvecha-skills"
-Documentation = "https://solvecha.com/docs"
+Documentation = "https://solvecha.com/docs?utm_source=pypi&utm_medium=project-links&utm_campaign=solvecha-python"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/solvecha"]

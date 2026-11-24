@@ -1,11 +1,11 @@
 # solvecha (Python)
 
-A small client for the [Solvecha](https://solvecha.com) captcha API, plus ready-made tools for AI agent frameworks: OpenAI function calling and the Agents SDK, LangChain, CrewAI, LlamaIndex and Browser Use.
+A small client for the [Solvecha](https://solvecha.com/?utm_source=pypi&utm_medium=readme&utm_campaign=solvecha-python) captcha API, plus ready-made tools for AI agent frameworks: OpenAI function calling and the Agents SDK, LangChain, CrewAI, LlamaIndex and Browser Use.
 
 ```bash
 pip install solvecha                  # client only (needs httpx)
 pip install "solvecha[langchain]"     # or openai, crewai, llamaindex, browser-use
-export SOLVECHA_API_KEY=slv_...       # create a key at https://solvecha.com/dashboard
+export SOLVECHA_API_KEY=slv_...       # create a key at https://solvecha.com/dashboard?utm_source=pypi&utm_medium=readme&utm_campaign=solvecha-python
 ```
 
 ## Client
@@ -53,7 +53,7 @@ The action crops the screenshot to the reCAPTCHA challenge window and returns th
 
 ## Or use MCP
 
-No code needed: `https://api.solvecha.com/mcp` with `Authorization: Bearer <key>`. See https://solvecha.com/docs/mcp-server.
+No code needed: `https://api.solvecha.com/mcp` with `Authorization: Bearer <key>`. See https://solvecha.com/docs/mcp-server?utm_source=pypi&utm_medium=readme&utm_campaign=solvecha-python.
 
 ## Develop
 
